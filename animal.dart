@@ -10,7 +10,10 @@ class Dog extends Animal {
 
   void bark() => print('bark');
   @override
-  void sleep() => print('dog: sleep'); // this is a method override of superclass method.
+  void sleep() {
+    super.sleep(); //runs the super method within override method
+    print('sleep some more'); //adds some code 
+  }
 }
 
 class Cow extends Animal {
