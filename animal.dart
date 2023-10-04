@@ -9,6 +9,8 @@ class Dog extends Animal {
   Dog({required int age}) : super(age: age);
 
   void bark() => print('bark');
+  @override
+  void sleep() => print('dog: sleep'); // this is a method override of superclass method.
 }
 
 class Cow extends Animal {
@@ -26,13 +28,5 @@ void main() {
   final animal = Animal(age: 10);
   animal.sleep();
   final dog = Dog(age: 10);
-  dog.bark();
   dog.sleep();
-  final cow = Cow(age: 10);
-  cow.moo();
-  cow.sleep();
-  final cleverDog = CleverDog(age: 10);
-  cleverDog.catchBall();
-  cleverDog.bark();
-  cleverDog.sleep();
 }
