@@ -2,6 +2,10 @@ import 'dart:math';
 
 abstract class Shape {
   double get area;
+  double get perimeter;
+  void printValues() {
+    print('area: $area, perimeter: $perimeter');
+  }
 }
 
 class Square extends Shape {
@@ -10,6 +14,11 @@ class Square extends Shape {
 
   @override
   double get area => side * side;
+  
+  @override
+  double get perimeter => 4 * side;
+
+
 }
 
 class Circle extends Shape {
@@ -18,25 +27,24 @@ class Circle extends Shape {
   
   @override
   double get area => pi * radius * radius;
+  
+  @override
+  double get perimeter => 2 * pi * radius;
+
+
 
 }
 
-void printArea(Shape shape) {
-  print(shape.area);
-}
+// void printArea(Shape shape) {
+//   print(shape.area);
+// }
+
+
 
 void main() {
-  // final shape = Shape();
-final square = Square(10);
-printArea(square);
-final circle = Circle(5);
-printArea(circle);
-final shapes = [
-  Square(2),
-  Circle(3),
-];
-// this all works because the objects have a type
-// that is a sublcass of Shape.
-shapes.forEach((shape) => printArea(shape));
-shapes.forEach(printArea);
+  final shapes = [
+    Square(3),
+    Circle(4),
+  ];
+  shapes.forEach((shape) => shape.printValues());
 }
