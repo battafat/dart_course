@@ -1,6 +1,6 @@
 import 'dart:ffi';
 
-class Stack<T> {
+class Stack<T> { // a stack has a list -- composition
   final List<T> _items = []; // example of design pattern called composition
 
   void push(T item) => _items.add(item);
